@@ -14,10 +14,9 @@ RUN curl --insecure -L ${BASE_URL}/${TAR_FILE} |tar xvz && \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64
 
-RUN curl --insecure -L https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.2/kubeseal-0.17.2-linux-amd64.tar.gz | tar xvz && \
+RUN curl --insecure -L https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.2/kubeseal-0.17.2-linux-amd64.tar.gz | tar -xz kubeseal && \
     mv kubeseal /usr/bin/ && \
-    chmod +x /usr/bin/kubeseal && \
-    rm -rf *
+    chmod +x /usr/bin/kubeseal
 
 
 RUN apt-get -qqy update
