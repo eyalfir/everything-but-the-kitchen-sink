@@ -1,3 +1,5 @@
+FROM msoap/shell2http AS shell2http
+
 FROM google/cloud-sdk:354.0.0
 LABEL description="docker image to use for CI/CD. has jq, helm, kubectl, gcloud, curl"
 
@@ -63,3 +65,7 @@ RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/relea
 
 # tools
 RUN apt-get install -y netcat net-tools
+COPY --from=shell2http /app/shell2http /usr/bin/shell2http
+RUN apt-get install -y moreutils
+COPY ./entrypoint.sh /
+CMD /entrypoint.sh
