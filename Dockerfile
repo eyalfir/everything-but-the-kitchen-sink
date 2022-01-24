@@ -66,6 +66,12 @@ RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/relea
 # tools
 RUN apt-get install -y netcat net-tools
 COPY --from=shell2http /app/shell2http /usr/bin/shell2http
-RUN apt-get install -y moreutils
+RUN apt-get install -y moreutils wget
 COPY ./entrypoint.sh /
 CMD /entrypoint.sh
+
+RUN curl -kL https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb -o mysql-apt-config_0.8.22-1_all.deb && \
+    DEBIAN_FRONTEND=noninteractive dpkg -i ./mysql-apt-config_0.8.22-1_all.deb && \
+    apt update && \
+    apt install -y mysql-shell
+
