@@ -74,4 +74,4 @@ RUN curl -kL https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb -o mysq
     DEBIAN_FRONTEND=noninteractive dpkg -i ./mysql-apt-config_0.8.22-1_all.deb && \
     apt update && \
     apt install -y mysql-shell
-RUN apt install -y traceroute
+RUN apt install -y traceroute dnsutils
