@@ -75,3 +75,4 @@ RUN curl -kL https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb -o mysq
     apt update && \
     apt install -y mysql-shell
 RUN apt install -y traceroute dnsutils
+COPY --from=redboxoss/scuttle:latest /scuttle /bin/scuttle
