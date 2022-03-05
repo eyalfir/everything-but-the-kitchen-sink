@@ -38,7 +38,7 @@ RUN pip3 install grpcio==1.39.0 google-api-core==2.0.0 google-cloud-core==2.0.0 
 RUN pip3 install google-cloud-firestore==2.3.0 ipython==7.18.1 kafka-python==2.0.2 ujson==4.0.1 yq==2.11.1 PyYAML==5.3.1 pytest==6.1.1 PySocks==1.7.1 requests_toolbelt==0.9.1 pytest-xdist==2.1.0 pygit2==1.0.3 pytest-randomly==3.4.1 sirem==0.0.9 pytest-parallel
 RUN pip3 install Cython happybase==1.2.0 lxml ply==3.11 pyaml==20.4.0 pymongo==3.11.0 ansible==2.10.1 elasticsearch==7.9.1 iso3166==1.0 junit-xml==1.8 pytest-html==2.1.1
 RUN pip3 install thriftpy pytest-json==0.4.0 python-geoip==1.2 PyMySQL==0.10.1 locust==1.1 locustio==0.14.6
-RUN pip3 install six==1.15.0 googleapis-common-protos==1.53.0 google-cloud-bigtable==2.3.3 google-cloud-storage==1.42.0 google-resumable-media==2.0.0 avro==1.9.1 redis==3.5.3 joblib==0.15.1 google-cloud-bigquery==2.25.1 PyJWT==1.7.1 cryptography==3.1.1 avro-python3==1.10.0
+RUN pip3 install six==1.15.0 googleapis-common-protos==1.53.0 google-cloud-bigtable==2.3.3 google-cloud-storage==1.42.0 google-resumable-media==2.0.0 avro==1.9.1 redis==3.5.3 joblib==0.15.1 google-cloud-bigquery==2.25.1 PyJWT==1.7.1 cryptography==3.1.1 avro-python3==1.10.0 kubernetes==23.3.0
 RUN npm install -g redoc-cli || npm install -g redoc-cli
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN curl --insecure -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-Linux-x86_64" -o /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose
